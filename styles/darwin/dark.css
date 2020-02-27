@@ -52,6 +52,11 @@ progress[value]::-webkit-progress-bar {
 progress[value]::-webkit-progress-value {
     background: var(--accent); }
 
+/* Editable input*/
+div[contenteditable="true"] {
+    color: var(--light) !important;
+}
+
 /* App wrapper. */
 #app .app {
     background: none;
@@ -424,6 +429,11 @@ span[data-icon="dark-switch"] > svg > path:first-child {
 .pluggable-input.pluggable-input-compose > div:first-child {
     transition: 150ms ease-in-out !important; }
 
+/* Recording duration */
+._2NdXo {
+    color: var(--light) !important;
+}
+
 
 /* Right drawer. */
 .app ._1C9rS ._1KDYa {
@@ -451,6 +461,10 @@ span[data-icon="dark-switch"] > svg > path:first-child {
 /* Unknown User's name. */
 html[dir=ltr] ._1F9Ap {
     color: var(--light) !important;
+}
+/* Known user's name */
+._1QjgA > ._F7Vk {
+    color: inherit;
 }
 /* User's name. */
 .app ._1C9rS .copyable-text, ._19vo_, ._3H4MS {
@@ -651,10 +665,13 @@ html[dir] ._3cukQ ._1mrMQ, html[dir] ._1o6AT ._1mrMQ {
     color: var(--lighter) !important; }
 
 /* Mentions. */
-.message-in .matched-mention,
+.message-in .matched-mention ,
 .message-out .matched-mention,
-.message-out .matched-mention .at-symbol {
+span[data-mention-jid],
+span[data-mention-jid] > span {
     color: var(--accent) !important; }
+.at-symbol {
+    color: inherit !important; }
 
 /* Message meta text color. */
 [class*="message-"] ._3wVZ5 *, [class*="message-"] ._3wVZ5 *,
@@ -732,6 +749,10 @@ html[dir] ._3_nIn {
     background-color: var(--darker) !important;
 }
 
+/* Quoted reply message */
+html[dir] .message-in ._2HTIU, html[dir] .message-out ._2HTIU {
+    background-color: rgba(0, 0, 0, 0.2) !important;
+}
 
 /* Reply section. (= */
 footer ._1ebw2 {
@@ -771,6 +792,11 @@ footer ._1ebw2 > div:last-child > div svg {
 
 .matched-text {
     color: var(--accent); !important;
+}
+
+/* Group message colon after sender's name*/
+.xD91K {
+    color: var(--light) !important;
 }
 
 /* Wrapper. */
@@ -847,7 +873,7 @@ footer ._1ebw2 > div:last-child > div svg {
 ._1j7jW {
     display: none !important; }
 /* Sender. */
-._2Hp95 ._3Mf7Z {
+._2Hp95 ._3Mf7Z, html[dir] ._3tMyP {
     background-color: var(--darker) !important; }
 /* Time/status. */
 ._2Hp95 ._3qAvH {
@@ -888,6 +914,10 @@ footer ._1ebw2 > div:last-child > div svg {
 /* Sticker drawer scroll arrow */
 html[dir] ._26IFT {
     background-color: var(--darker) !important; }
+/* Emoji categories */
+._2lKjK {
+    color: var(--light) !important;
+}
 
 /* Search emojis. */
 .DWACj label,
@@ -1133,7 +1163,9 @@ span[data-icon="status-check"] svg path {
 span[data-icon="msg-dblcheck-ack"] svg path,
 span[data-icon="status-dblcheck-ack"] svg path,
 span[data-icon="msg-dblcheck-ack-light"] svg path,
-span[data-icon="status-v3-unread"] > svg > path:last-child {
+span[data-icon="status-v3-unread"] > svg > path:last-child,
+span[data-icon="msg-dblcheck"].Ryz_m svg path,
+._1t84_ span svg path {
     fill: var(--accent) !important;
     opacity: 1 !important; }
 
@@ -1205,3 +1237,10 @@ html[dir] ._38Akx ._30LFW::-webkit-slider-runnable-track, html[dir] ._2PmJH ._30
 /* Rounded buttons. */
 span svg > path[fill="#00BFA5"] {
     fill: var(--accent) !important; }
+
+/* Fix white middle border on smaller resolutions*/
+@media screen and (max-width: 1024px) {
+    html[dir=ltr] .three ._1mseJ {
+        border-left-color: var(--dark);
+    }
+}
